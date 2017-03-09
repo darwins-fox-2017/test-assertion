@@ -5,6 +5,7 @@ let add = require('../add')
 let sub = require('../sub')
 let multiple = require('../multiple')
 let div = require('../div')
+let power = require('../power')
 
 describe('Test fungsi matematikan', function(){
   describe('Penambahan', function(){
@@ -46,6 +47,17 @@ describe('Test fungsi matematikan', function(){
     })
     it('Harus keluar "Tipe data salah", jika type data yang dimasukan bukan angka', function(){
       div("3",2).should.equal('Tipe data salah')
+    })
+  })
+  describe('Perpangkatan', function(){
+    it('Seharusnya mengembalkan 625 jika value paramaternya 25', function(){
+      power(25).should.equal(625)
+    })
+    it('Harus keluar Paramater Kurang jika salah satu paramater tidak diisi', function(){
+      power().should.equal('Paramater Kurang')
+    })
+    it('Harus keluar "Tipe data salah", jika type data yang dimasukan bukan angka', function(){
+      power("3",2).should.equal('Tipe data salah')
     })
   })
 })
