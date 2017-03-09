@@ -1,7 +1,7 @@
-function sub(x, y){
+function multiple(x, y){
   if (x && y) {
      if (typeof x == 'number' && typeof y == 'number'){
-       return x - y;
+       return x * y;
      } else {
        return 'Tipe data salah'
      }
@@ -10,4 +10,4 @@ function sub(x, y){
   }
 }
 
-module.exports = sub
+module.exports = multiple

@@ -3,6 +3,7 @@ let should = require('chai').should()
 // add
 let add = require('../add')
 let sub = require('../sub')
+let multiple = require('../multiple')
 
 describe('Test fungsi matematikan', function(){
   describe('Penambahan', function(){
@@ -22,6 +23,17 @@ describe('Test fungsi matematikan', function(){
     })
     it('Harus keluar "Tipe data salah", jika type data yang dimasukan bukan angka', function(){
       sub("3",2).should.equal('Tipe data salah')
+    })
+  })
+  describe('Perkalian', function(){
+    it('Seharusnya mengembalkan 30 jika value paramaternya 5 dan 6', function(){
+      multiple(5,6).should.equal(30)
+    })
+    it('Harus keluar Paramater Kurang jika salah satu paramater tidak diisi', function(){
+      multiple(3).should.equal('Paramater Kurang')
+    })
+    it('Harus keluar "Tipe data salah", jika type data yang dimasukan bukan angka', function(){
+      multiple("3",2).should.equal('Tipe data salah')
     })
   })
 })
